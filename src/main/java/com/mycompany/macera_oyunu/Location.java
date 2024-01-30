@@ -4,6 +4,8 @@
  */
 package com.mycompany.macera_oyunu;
 
+import java.util.Scanner;
+
 /**
  *
  * @author zafer
@@ -12,7 +14,10 @@ public abstract class Location {
 
     protected Player player;
     protected String name;
+    Scanner scan = new Scanner(System.in);
 
+    
+    
     Location(Player player) {
         this.player = player;
     }

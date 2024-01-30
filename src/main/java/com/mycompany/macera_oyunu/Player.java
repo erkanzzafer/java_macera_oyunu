@@ -19,6 +19,7 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
+        this.inv = new Inventory();
     }
 
     public void selectChar() {
@@ -63,8 +64,8 @@ public class Player {
         setDamage(dmg);
         setHealthy(hlthy);
         setMoney(mny);
-        setHealthy(rHealthy); 
-   }
+        setHealthy(rHealthy);
+    }
 
     public int getDamage() {
         return damage;
