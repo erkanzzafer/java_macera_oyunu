@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Player {
 
-    private int damage, healthy, money;
+    private int damage, healthy, money, rHealthy;
     private String name, cName;
     private Inventory inv;
     Scanner scan = new Scanner(System.in);
@@ -24,32 +24,19 @@ public class Player {
     public void selectChar() {
         switch (charMenu()) {
             case 1 -> {
-                setName("Samuray");
-                setDamage(5);
-                setHealthy(21);
-                setMoney(15);
+                initPlayer("Samuray", 5, 21, 15);
                 break;
             }
             case 2 -> {
-                setName("Okçu");
-                setDamage(7);
-                setHealthy(18);
-                setMoney(20);
+                initPlayer("Okçu", 7, 18, 20);
                 break;
             }
-
             case 3 -> {
-                setName("Şovalye");
-                setDamage(8);
-                setHealthy(24);
-                setMoney(5);
+                initPlayer("Şovalye", 8, 24, 5);
                 break;
             }
             default -> {
-                setName("Şovalye");
-                setDamage(8);
-                setHealthy(24);
-                setMoney(5);
+                initPlayer("Şovalye", 8, 24, 5);
                 break;
             }
         }
@@ -70,6 +57,14 @@ public class Player {
         return charID;
 
     }
+
+    public void initPlayer(String cName, int dmg, int hlthy, int mny) {
+        setName(cName);
+        setDamage(dmg);
+        setHealthy(hlthy);
+        setMoney(mny);
+        setHealthy(rHealthy); 
+   }
 
     public int getDamage() {
         return damage;
@@ -117,6 +112,14 @@ public class Player {
 
     public void setInv(Inventory inv) {
         this.inv = inv;
+    }
+
+    public int getrHealthy() {
+        return rHealthy;
+    }
+
+    public void setrHealthy(int rHealthy) {
+        this.rHealthy = rHealthy;
     }
 
 }
